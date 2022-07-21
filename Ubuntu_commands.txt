@@ -1,5 +1,11 @@
+apt-get update
+timedatectl set-timezone Europe/Moscow
+sudo apt-get install chrony
+sudo systemctl enable chrony
+
 date +"%H:%M %d/%m/%Y"
 whoami
+who
 
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 2d5e2461e52e4453b35f4a51f238e737
