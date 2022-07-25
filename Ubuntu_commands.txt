@@ -10,3 +10,5 @@ who
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 2d5e2461e52e4453b35f4a51f238e737
 
+// добавляет (-а) в группу (-G) docker пользователя jenkins
+usermod -a -G docker jenkins
