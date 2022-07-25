@@ -36,7 +36,7 @@ pipeline {
             steps {
                 echo "================== Start pushing image =================="
                 sh '''
-                docker push komplinov/toolbox:latest
+                docker push komplinov/toolbox01:latest
                 '''
             }
         }
