@@ -11,15 +11,13 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("First step") {
+        stage("Create docker image") {
             steps {
-                sh 'ssh root@srv6-ubuntu-22-04 \'hostname\''
+                echo " ================== Start building image =================="
+                dir ('docker/toolbox') {
+                    sh 'docker build .'
+                }
             }
         }
-        stage("Second step") {
-            steps {
-                sh 'ssh root@srv6-ubuntu-22-04 \'uptime\''
-            }
-        }        
     }
 }
