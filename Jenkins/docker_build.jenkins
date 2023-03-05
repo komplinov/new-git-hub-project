@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo "================== Start building image =================="
                 dir ('docker/toolbox') {
-                    sh 'docker build -t komplinov/toolbox01:latest .'
+                    sh 'docker build -t komplinov/toolbox01:latest2 .'
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 echo "================== Start pushing image =================="
                 sh '''
-                docker push komplinov/toolbox01:latest
+                docker push komplinov/toolbox01:latest2
                 '''
             }
         }
