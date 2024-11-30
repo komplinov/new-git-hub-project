@@ -1,5 +1,5 @@
 #!groovy
-// Check ub1 properties
+// Check srv6-ubuntu-22-04 properties
 properties([disableConcurrentBuilds()])
 
 pipeline {
