@@ -13,3 +13,5 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 // добавляет (-а) в группу (-G) docker пользователя jenkins
 usermod -a -G docker jenkins
+
+ docker rmi $(docker images -a -q) -f
