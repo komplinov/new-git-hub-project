@@ -9,6 +9,13 @@ sysadmin 5000
 192.168.10.26:22 (SSH to SRV6-ubuntu-22-04)
 sysadmin 6000
 
+Сайты
+hub.docker.com
+login.docker.com
+komplinov  
+5m6i85zRT8Z!69Ehub
+
+
 cat /etc/passwd -n
 
 jenkins@srv5-ubuntu-22-04:~$ ssh-keygen 
