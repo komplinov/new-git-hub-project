@@ -14,7 +14,7 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("docker login") {
+        stage("Docker login") {
             steps {
                 echo "================= Start docker login ================="
                 withCredentials([usernamePassword(credentialsId: 'dockerhub_komplinov', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
@@ -24,7 +24,7 @@ pipeline {
                 }
             }
         }
-        stage("Create docker image") {
+        stage("Create docker image 2.0") {
             steps {
                 echo "================== Start building image =================="
                 dir ('docker/toolbox') {
@@ -32,7 +32,7 @@ pipeline {
                 }
             }
         }
-        stage("docker push") {
+        stage("Docker push 2.0") {
             steps {
                 echo "================== Start pushing image =================="
                 sh '''
