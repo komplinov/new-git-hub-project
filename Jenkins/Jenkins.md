@@ -18,6 +18,7 @@ komplinov
 
 cat /etc/passwd -n
 
+# тут создал ключ на Ub1 для jenkins
 jenkins@srv5-ubuntu-22-04:~$ ssh-keygen 
 Generating public/private rsa key pair.
 Enter file in which to save the key (/var/lib/jenkins/.ssh/id_rsa): 
@@ -106,3 +107,30 @@ CofQl0y7d5P2WplxSDHjyJpM+v11mGMfnKNEgLLHfIN3a5CKx+pKwzwjRFJgTwfixdqTA7
 vWWMsu495LNZvqxkzlR4MiCBI1vokazTi4BTQiPGXziVdd81xHm85ihU0CSbfvn+TQkn8H
 qnXVQReVcmRzgFAAAAGnN5c2FkbWluQHNydjYtdWJ1bnR1LTIyLTA0
 -----END OPENSSH PRIVATE KEY-----
+
+# тут создал ключ на Ub1 для sysadmin (2024.12.23)
+sysadmin@srv5-ubuntu-22-04:~/.ssh$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/sysadmin/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again:
+Your identification has been saved in /home/sysadmin/.ssh/id_rsa
+Your public key has been saved in /home/sysadmin/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:uS8opeRiuN/zTFcWirFWiERpOfHq9PIDZjEbY6I+w1U sysadmin@srv5-ubuntu-22-04        
+The key's randomart image is:
++---[RSA 3072]----+
+|   .++           |
+|   .=o .         |
+|   ...+ . .      |
+|  . *E = o .     |
+| . o+*+ S o      |
+|.  +*o.  +       |
+|o..=o+o.o        |
+|.=o.==o...       |
+|.++..++. ..      |
++----[SHA256]-----+
+
+# после этого пропихиваем открытый ключ с UB1 на UB2
+sysadmin@srv5-ubuntu-22-04:~/.ssh$ ssh-copy-id sysadmin@192.168.10.26
+# и ключ появляется в файле sysamdin@srv6-ubuntu-22-04 ~/.ssh/authorized_keys
